@@ -2,7 +2,9 @@ import React from 'react'
 
 const ToggleInput = ({text, setisSet}) => {
     function handleOnChange(e){
-        setisSet(e.target.checked);
+        if(setisSet != null){
+          setisSet(e.target.checked);
+        }
         console.log(e.target.checked);
     }
   return (

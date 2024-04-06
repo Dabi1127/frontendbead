@@ -4,6 +4,8 @@ import TextInput from "./components/TextInput";
 import { NumericFormat } from 'react-number-format';
 import SalaryButton from "./components/SalaryButton";
 import FrissHazasok from "./components/FrissHazasok";
+import ToggleInput from "./components/ToggleInput";
+import FamilyToggle from "./components/FamilyToggle";
 
 
 const SalaryCalculator = ({personName}) => {
@@ -27,7 +29,10 @@ const SalaryCalculator = ({personName}) => {
         <SalaryButton SalaryValue={SalaryValue} setSalaryValue={setSalaryValue} setSliderValue={setSliderValue} changeAmount={1.05} text="+5%" />
       </div>
       <h1 className="font-bold text-primary text-2xl mb-5 mt-5">Kedvezmények</h1>
+      <ToggleInput text="25 év alattiak SZJA mentessége"/>
       <FrissHazasok></FrissHazasok>
+      <ToggleInput text="Személyi adókedvezmény"/>
+      <FamilyToggle></FamilyToggle>
     </div>
   );
 };
