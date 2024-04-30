@@ -25,7 +25,7 @@ const SalaryCalculator = ({personName}) => {
     tax += SalaryValue*0.185;
 
     if(below25){
-      if(setSliderValue > 499952){
+      if(SalaryValue > 499952){
         tax += (SalaryValue-499952)*0.15;
       }
     }else{
