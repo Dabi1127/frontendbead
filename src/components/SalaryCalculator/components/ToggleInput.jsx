@@ -5,7 +5,6 @@ const ToggleInput = ({text, setisSet}) => {
         if(setisSet != null){
           setisSet(e.target.checked);
         }
-        console.log(e.target.checked);
     }
   return (
     <div className='flex'>

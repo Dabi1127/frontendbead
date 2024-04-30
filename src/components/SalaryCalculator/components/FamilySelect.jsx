@@ -7,17 +7,29 @@ const FamilySelect = ({isSet}) => {
     if(isSet){
         return (
             <div className='text-secondary text-sm'>
-                <button className='btn btn-secondary btn-xs'>+</button>
+                <button onClick={eltartottUp} className='btn btn-secondary btn-xs'>+</button>
                 {eltartott}
-                <button className='btn btn-secondary btn-xs'>-</button>
+                <button onClick={eltartottDown} className='btn btn-secondary btn-xs'>-</button>
                 Eltartott, ebből kedvezményezett:
-                <button className='btn btn-secondary btn-xs'>+</button>
+                <button onClick={kedvezUp} className='btn btn-secondary btn-xs'>+</button>
                 {kedvez}
-                <button className='btn btn-secondary btn-xs'>-</button>
+                <button onClick={kedvezDown} className='btn btn-secondary btn-xs'>-</button>
             </div>
         )
     }else{
         return
+    }
+    function eltartottUp(){
+        seteltartott(eltartott+1);
+    }
+    function eltartottDown(){
+        if(eltartott > 0 && eltartott > kedvez) seteltartott(eltartott-1);
+    }
+    function kedvezUp(){
+        if(kedvez < eltartott && kedvez < 3) setkedvez(kedvez+1);
+    }
+    function kedvezDown(){
+        if(kedvez > 0) setkedvez(kedvez-1);
     }
 }
 
